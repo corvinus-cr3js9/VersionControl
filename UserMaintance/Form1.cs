@@ -31,8 +31,8 @@ namespace UserMaintance
         private void btnAdd_Click(object sender, EventArgs e)
         {
                 User u = new User();
-                u.Lastname = txtboxLastName.Text;
-                u.FistrName = txtboxFirstName.Text;
+                u.Fullname = txtboxLastName.Text;
+               // u.FistrName = txtboxFirstName.Text;
                 users.Add(u);
           
         }

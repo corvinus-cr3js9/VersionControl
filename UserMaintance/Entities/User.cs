@@ -9,18 +9,6 @@ namespace UserMaintance.Entities
     public class User
     {
         public Guid ID { get; set; } = Guid.NewGuid();
-        public string FistrName { get; set; }
-        public string Lastname { get; set; }
-        public string Fullname
-        {
-            get
-            {
-                return string.Format("{0} {1}",
-                    Lastname,
-                    FistrName);
-            }
-
-
+        public string Fullname { get; set; }
         }
-    }
 }
