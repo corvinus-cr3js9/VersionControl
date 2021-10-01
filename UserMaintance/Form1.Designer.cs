@@ -33,6 +33,7 @@ namespace UserMaintance
             this.txtboxLastName = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btnWrite = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblLastName
@@ -69,11 +70,22 @@ namespace UserMaintance
             this.listBox1.Size = new System.Drawing.Size(226, 264);
             this.listBox1.TabIndex = 5;
             // 
+            // btnWrite
+            // 
+            this.btnWrite.Location = new System.Drawing.Point(306, 201);
+            this.btnWrite.Name = "btnWrite";
+            this.btnWrite.Size = new System.Drawing.Size(159, 23);
+            this.btnWrite.TabIndex = 6;
+            this.btnWrite.Text = "Button 1";
+            this.btnWrite.UseVisualStyleBackColor = true;
+            this.btnWrite.Click += new System.EventHandler(this.btnWrite_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(508, 305);
+            this.Controls.Add(this.btnWrite);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtboxLastName);
@@ -91,6 +103,7 @@ namespace UserMaintance
         private System.Windows.Forms.TextBox txtboxLastName;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button btnWrite;
     }
 }
 
