@@ -34,6 +34,7 @@ namespace UserMaintance
             this.btnAdd = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.btnWrite = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblLastName
@@ -72,7 +73,7 @@ namespace UserMaintance
             // 
             // btnWrite
             // 
-            this.btnWrite.Location = new System.Drawing.Point(306, 201);
+            this.btnWrite.Location = new System.Drawing.Point(306, 218);
             this.btnWrite.Name = "btnWrite";
             this.btnWrite.Size = new System.Drawing.Size(159, 23);
             this.btnWrite.TabIndex = 6;
@@ -80,11 +81,22 @@ namespace UserMaintance
             this.btnWrite.UseVisualStyleBackColor = true;
             this.btnWrite.Click += new System.EventHandler(this.btnWrite_Click);
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(306, 145);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(159, 23);
+            this.btnDelete.TabIndex = 7;
+            this.btnDelete.Text = "button1";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(508, 305);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnWrite);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnAdd);
@@ -104,6 +116,7 @@ namespace UserMaintance
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button btnWrite;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
 
