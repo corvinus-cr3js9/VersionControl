@@ -27,6 +27,7 @@ namespace Week04
             InitializeComponent();
             LoadData();
             CreateExcel();
+            FormatTable();
         }
         private void LoadData()
         {
@@ -56,7 +57,8 @@ namespace Week04
                 xlApp = null;
             }
         }
-        private void CreateTable()
+        public int headerlength;
+        public void CreateTable()
         {
             string[] headers = new string[]
             {
@@ -70,12 +72,13 @@ namespace Week04
                  "Ár (mFt)",
                  "Négyzetméter ár (Ft/m2)"
             };
-            for (int i = 0; i < headers.Length; i++)
+            for (int i = 1; i < headers.Length; i++)
             {
-                xlSheet.Cells[1, i + 1] = headers[i];
+                xlSheet.Cells[1, i+1] = headers[i];
                 i++;
 
             }
+            headerlength = headers.Length;
             object[,] values = new object[Flats.Count, headers.Length];
             int counter = 0;
             foreach (Flat f in Flats)
@@ -89,7 +92,6 @@ namespace Week04
                     values[counter, 4] = "Van";
                 }
                 else values[counter, 4] = "Nincs";
-                values[counter, 4] = f.Elevator;
                 values[counter, 5] = f.NumberOfRooms;
                 values[counter, 6] = f.FloorArea;
                 values[counter, 7] = f.Price;
@@ -120,6 +122,9 @@ namespace Week04
             return ExcelCoordinate;
 
         }
-
+        private void FormatTable()
+        {
+            Excel.Range headerRange = xlSheet.get_Range(Getcell(1, 1), Getcell(1, headerlength));
+        }
     }
 }
