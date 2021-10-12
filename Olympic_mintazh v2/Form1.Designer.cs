@@ -50,7 +50,7 @@ namespace Olympic_mintazh_v2
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(75, 23);
             this.btnExcel.TabIndex = 1;
-            this.btnExcel.Text = "button1";
+            this.btnExcel.Text = "Excelbe";
             this.btnExcel.UseVisualStyleBackColor = true;
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
