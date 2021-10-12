@@ -19,6 +19,7 @@ namespace Olympic_mintazh_v2
         {
             InitializeComponent();
             Load("Summer_olympic_Medals.csv");
+            Year();
         }
         private void Load(string Filename)
         {
@@ -38,11 +39,24 @@ namespace Olympic_mintazh_v2
                             int.Parse(line[6]),
                             int.Parse(line[7])
                         }
-
+                       
 
                     };
+                    results.Add(or);
                 }
+
             }
+            
+        }
+        public void Year()
+        {
+            var year = (from x in results
+                        orderby x.Year descending
+                        select x.Year).Distinct();
+
+            YearBindingSource.DataSource = year.ToList();
+            comboBoxYear.DataSource = YearBindingSource;
+           
         }
     }
 }
