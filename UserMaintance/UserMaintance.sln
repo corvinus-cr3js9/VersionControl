@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserMaintance", "UserMainta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week04", "..\Week04\Week04.csproj", "{ECAA4EE7-9A90-47C7-A0E4-DCAE60A6DFBA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olympic_mintazh v2", "..\Olympic_mintazh v2\Olympic_mintazh v2.csproj", "{D8356BB8-20CE-45B5-A922-7084A816675C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{ECAA4EE7-9A90-47C7-A0E4-DCAE60A6DFBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECAA4EE7-9A90-47C7-A0E4-DCAE60A6DFBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECAA4EE7-9A90-47C7-A0E4-DCAE60A6DFBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8356BB8-20CE-45B5-A922-7084A816675C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8356BB8-20CE-45B5-A922-7084A816675C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8356BB8-20CE-45B5-A922-7084A816675C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8356BB8-20CE-45B5-A922-7084A816675C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
