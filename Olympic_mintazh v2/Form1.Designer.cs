@@ -32,6 +32,7 @@ namespace Olympic_mintazh_v2
             this.components = new System.ComponentModel.Container();
             this.comboBoxYear = new System.Windows.Forms.ComboBox();
             this.YearBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnExcel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.YearBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,11 +44,22 @@ namespace Olympic_mintazh_v2
             this.comboBoxYear.Size = new System.Drawing.Size(121, 21);
             this.comboBoxYear.TabIndex = 0;
             // 
+            // btnExcel
+            // 
+            this.btnExcel.Location = new System.Drawing.Point(357, 124);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(75, 23);
+            this.btnExcel.TabIndex = 1;
+            this.btnExcel.Text = "button1";
+            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.comboBoxYear);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -60,6 +72,7 @@ namespace Olympic_mintazh_v2
 
         private System.Windows.Forms.ComboBox comboBoxYear;
         private System.Windows.Forms.BindingSource YearBindingSource;
+        private System.Windows.Forms.Button btnExcel;
     }
 }
 

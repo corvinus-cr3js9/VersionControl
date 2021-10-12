@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System;
+using System.Reflection;
+
 
 namespace Olympic_mintazh_v2
 {
@@ -20,8 +23,9 @@ namespace Olympic_mintazh_v2
             InitializeComponent();
             Load("Summer_olympic_Medals.csv");
             Year();
+            CalculatePosition();
         }
-        private void Load(string Filename)
+        public void Load(string Filename)
         {
             using (var sr = new StreamReader(Filename, Encoding.Default))
             {
@@ -57,6 +61,46 @@ namespace Olympic_mintazh_v2
             YearBindingSource.DataSource = year.ToList();
             comboBoxYear.DataSource = YearBindingSource;
            
+        }
+        private int CalculateOrder(OlympicResult or)
+        {
+            int counter = 0;
+            var SzurtLista = from x in results
+                             where or.Year == x.Year && or.Country != x.Country
+                             select x;
+            foreach (var f in SzurtLista)
+            {
+                if (f.Medals[0] > or.Medals[0]) counter++;
+                else if (f.Medals[0] == or.Medals[0] && f.Medals[1] > or.Medals[1]) counter++;
+                else if (f.Medals[0] == or.Medals[0] && f.Medals[1] == or.Medals[1] && f.Medals[2] == or.Medals[2]) counter++;
+            }
+            return counter + 1;
+
+        }
+        private void CalculatePosition()
+        {
+            foreach (var p in results)
+            {
+                p.Position = CalculateOrder(p);
+            }
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+
+                     
+        }
+        private void ExcelExport()
+        {
+            try
+            {
+                xlApp = new 
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
