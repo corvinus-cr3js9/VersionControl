@@ -73,12 +73,12 @@ namespace Week04
             for (int i = 0; i < headers.Length; i++)
             {
                 xlSheet.Cells[1, i+1] = headers[i];
-                i++;
+                
 
             }
             object[,] values = new object[Flats.Count, headers.Length];
             int counter = 0;
-            foreach (Flat f in Flats)
+            foreach (var f in Flats)
             {
                 values[counter, 0] = f.Code;
                 values[counter, 1] = f.Vendor;
