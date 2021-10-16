@@ -9,6 +9,6 @@ namespace weks05.Entities
     class PortfolioItem
     {
         public string Index { get; set; }
-        public decimal Voluem { get; set; }
+        public decimal Volume { get; set; }
     }
 }
