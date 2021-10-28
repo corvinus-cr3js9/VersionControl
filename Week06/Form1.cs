@@ -14,7 +14,11 @@ namespace Week06
     {
         public Form1()
         {
+
+            var mnbService = new MNBArf
+
             InitializeComponent();
+            
         }
     }
 }
