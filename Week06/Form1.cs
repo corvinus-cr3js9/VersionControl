@@ -33,7 +33,7 @@ namespace Week06
             {
                 currencyNames = (string)comboBox1.SelectedItem,
                 startDate = dateTimePicker2.Value.ToString(),
-                endDate = dateTimePicker1.ToString()
+                endDate = dateTimePicker1.Value.ToString()
             };
             var response = mnbService.GetExchangeRates(request);
             var result = response.GetExchangeRatesResult;
@@ -61,7 +61,16 @@ namespace Week06
                 //Valuta
 
                 var ChildElement = (XmlElement)element.ChildNodes[0];
-                rate.Currency = ChildElement.GetAttribute("curr");
+                if (ChildElement == null)
+                {
+                    MessageBox.Show("Kérem válasszon másik valutát.");
+                    return;
+                }
+                else
+                {
+                    rate.Currency = ChildElement.GetAttribute("curr");
+                }
+                
 
                 //Érték
 
