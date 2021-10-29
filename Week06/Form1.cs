@@ -41,8 +41,10 @@ namespace Week06
                 string curr = CurrElement.InnerText;
                 Currencies.Add(curr);
             }
-
-            comboBox1.DataSource = Currencies;
+            var c = from x in Currencies
+                    orderby x 
+                    select x;
+            comboBox1.DataSource = c.ToList();
         }
 
         private void RefreshData()
