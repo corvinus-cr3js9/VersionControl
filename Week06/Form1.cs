@@ -18,11 +18,31 @@ namespace Week06
     public partial class Form1 : Form
     {
         BindingList<RateData> Rates = new BindingList<RateData>();
+        BindingList<string> Currencies = new BindingList<string>();
         public Form1()
         {
             InitializeComponent();
+            GetCurrency();
             RefreshData();
 
+        }
+
+        private void GetCurrency()
+        {
+            var mnbService = new MNBArfolyamServiceSoapClient();
+            var request = new GetCurrenciesRequestBody();
+            var response = mnbService.GetCurrencies(request);
+            var result = response.GetCurrenciesResult;
+
+            var xml = new XmlDocument();
+            xml.LoadXml(result);
+            foreach (XmlElement CurrElement in xml.DocumentElement.ChildNodes[0])
+            {
+                string curr = CurrElement.InnerText;
+                Currencies.Add(curr);
+            }
+
+            comboBox1.DataSource = Currencies;
         }
 
         private void RefreshData()
