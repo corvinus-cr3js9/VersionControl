@@ -83,8 +83,7 @@ namespace Week06
                 var ChildElement = (XmlElement)element.ChildNodes[0];
                 if (ChildElement == null)
                 {
-                    MessageBox.Show("Kérem válasszon másik valutát.");
-                    return;
+                    continue;
                 }
                 else
                 {
