@@ -14,7 +14,7 @@ namespace Week08.Entities
         {
             AutoSize = false;
             Height = 50;
-            Width = 50;
+            Width = Height;
             Paint += Ball_Paint;
                 
 
