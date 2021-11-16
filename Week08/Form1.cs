@@ -16,7 +16,7 @@ namespace Week08
         List<Ball> _balls = new List<Ball>();
         private BallFactory _factory;
 
-        private BallFactory Factory
+        public BallFactory Factory
         {
             get { return _factory; }
             set { _factory = value; }
@@ -33,7 +33,7 @@ namespace Week08
         {
             var ball = Factory.Createnew();
             _balls.Add(ball);
-            ball.Width = -ball.Width;
+            ball.Left = -ball.Width;
             mainPanel.Controls.Add(ball);
 
         }
