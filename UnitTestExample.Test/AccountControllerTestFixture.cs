@@ -40,14 +40,14 @@ namespace UnitTestExample.Test
         ]
         public void TestValidatePassword(string password, bool expectedResult)
         {
-           /* //Arrange
+            //Arrange
             var accountController = new AccountController();
 
             //Act
             var actualResult = accountController.ValidatePassword(password);
 
             //Assert
-            Assert.AreEqual(expectedResult, actualResult);*/
+            Assert.AreEqual(expectedResult, actualResult);
         }
     }
 }
