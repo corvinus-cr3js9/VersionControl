@@ -29,13 +29,45 @@ namespace Week11
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btnStart = new System.Windows.Forms.Button();
+            this.btnBrowse = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btnStart
+            // 
+            this.btnStart.Location = new System.Drawing.Point(694, 12);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(94, 23);
+            this.btnStart.TabIndex = 0;
+            this.btnStart.Text = "Start";
+            this.btnStart.UseVisualStyleBackColor = true;
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.Location = new System.Drawing.Point(590, 12);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(98, 23);
+            this.btnBrowse.TabIndex = 1;
+            this.btnBrowse.Text = "Browse";
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnBrowse);
+            this.Controls.Add(this.btnStart);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.Button btnBrowse;
     }
 }
 
