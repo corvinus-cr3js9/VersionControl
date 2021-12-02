@@ -22,7 +22,7 @@ namespace Week11
         public Form1()
         {
             InitializeComponent();
-            Population = GetPopulation(@"C:\Temp\nép-teszt.csv");
+            Population = GetPopulation(@"C:\Temp\nép.csv");
             BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
             DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
 
@@ -30,7 +30,7 @@ namespace Week11
             {
                 for (int i = 0; i < Population.Count; i++)
                 {
-
+                    Simstep(year, Population[i]);
                 }
 
                 int nmbrOfMales = (from x in Population
@@ -47,6 +47,45 @@ namespace Week11
             }
 
 
+
+
+        }
+
+        public void Simstep(int year, Person person)
+        {
+            if (!person.IsAlive) return;
+            byte age = (byte)(year - person.BirthYear);
+
+            double pDeath =(from x in DeathProbabilities
+                           where x.Age == age && x.Gender == person.Gender
+                           select x.P).FirstOrDefault();
+            if (rng.NextDouble() <= pDeath)
+            {
+                person.IsAlive = false;
+            }
+
+            if (person.IsAlive && person.Gender == Gender.Female)
+            {
+                double pBirth = (from x in BirthProbabilities
+                                 where x.Age == age
+                                 select x.P).FirstOrDefault();
+
+
+                //Születik gyerek?
+                if (rng.NextDouble() <=pBirth)
+                {
+                    Person újszülött = new Person()
+                    {
+                        BirthYear = year,
+                        NbrOfChildren = 0,
+                        Gender = (Gender)(rng.Next(1, 3))
+                    };
+                    Population.Add(újszülött);
+                }
+
+            }
+
+            
 
 
         }
