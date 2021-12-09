@@ -34,10 +34,16 @@ namespace Week12
                 gc.AddPlayer(nbrOfSteps);
             }
             gc.Start();
+            button1.Visible = false;
+            if (winnerBrain != null)
+            {
+                button1.Visible = true;
+            }
 
             /*gc.AddPlayer();
             gc.Start(true);*/
         }
+        Brain winnerBrain = null;
 
         private void Gc_GameOver(object sender)
         {
@@ -65,6 +71,24 @@ namespace Week12
                     gc.AddPlayer(b.Mutate());
             }
             gc.Start();
+            var winners = from p in topPerformers
+                          where p.IsWinner
+                          select p;
+            if (winners.Count() > 0)
+            {
+                winnerBrain = winners.FirstOrDefault().Brain.Clone();
+                gc.GameOver -= Gc_GameOver;
+                return;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            gc.ResetCurrentLevel();
+            gc.AddPlayer(winnerBrain.Clone());
+            gc.AddPlayer();
+            ga.Focus();
+            gc.Start(true);
         }
     }
 }
